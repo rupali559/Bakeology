@@ -1,0 +1,284 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="Bakeology.Site2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        } 
+        .main{
+            height:100%;
+            width:100%;
+        }
+        .icon{
+            float:right;
+            margin-top:22px;
+            
+        }
+        .nav-bar{
+            float:right;
+            font-size:x-large;
+            
+           
+        }
+        .logo-nav{
+         
+            background-color:#ffffff;
+            border-block:hidden;
+            border-bottom: 2px solid rgba(161,109,14,1);
+           /* border-bottom: 2px solid #EC0890;*/
+        }
+        .icon button{
+            margin-left:-4px;
+            border-radius:8px;
+            border-color:#ffffff;
+        }
+            
+        #TextBox1{
+            border-radius:8px;
+            border-color:#ffffff;
+            
+
+        }
+        #Button1{
+           border-radius:8px;
+           border-bottom: 2px solid rgba(161,109,14,1);
+           /*border-bottom: 2px solid #EC0890;*/
+        }
+        
+        .footer{
+           
+            background-color: #499fa4;            
+            bottom:0px;
+            width:100%;
+            position:relative;
+            height: 150px;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top:50px;
+        }
+       /* .products a{
+            text-decoration: none;
+            color: black;
+        }*/
+       .products{
+           display:inline-block;
+           justify-content:space-evenly;
+           text-decoration:none;
+           color:black;
+       }
+       .products #LinkButton1{
+           text-decoration:none;
+           color:black;
+       }
+       .products #LinkButton2{
+           text-decoration:none;
+           color:black;
+       }
+       .products #LinkButton3{
+           text-decoration:none;
+           color:black;
+       }
+        hr.nav-bar{
+              border: 1px solid red;
+            }
+        .out{
+            text-decoration:none;
+        }
+        /*.ft-div{
+            width: 100%;
+            height:180px;
+        }
+        .imgcls{
+            width: 100%;
+            height:210px;
+        }*/
+        /*.footer img{
+            float:left;
+            position: relative;
+            bottom: 10px;           
+        }
+        .bottom img{
+            position: relative;
+            bottom: 180px;
+            width:100%;
+            height:250px;
+           
+        }*/
+        /*.auto-style1 {
+            width: 100%;
+        }
+        .head{
+            margin:-150px 20px 20px 500px;
+        }
+        .head h2{
+            color:#CFB989;
+        }*/
+        /*#LinkButton2{
+            text-decoration:none;
+            color:#CFB989;
+        }*/
+        /*.contact{
+            
+            float:right;
+            
+
+        }
+        .footer img {
+            width:70px;
+            padding:40px;
+        }
+        .footer p{
+            width:250px;
+        }
+        .products h4{
+            margin-left:450px;
+        }
+        #LinkButton1{
+            text-decoration:none;
+            color:black;
+            margin-left:450px;
+        }
+        #LinkButton2{
+            text-decoration:none;
+            color:black;
+            margin-left:450px;
+        }
+        #LinkButton3{
+            text-decoration:none;
+            color:black;
+            margin-left:450px;
+        }*/
+        
+        
+        
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="main">
+            <table style="width:100%;">
+               
+                <tr>
+                    <td>
+                        <div class="logo-nav">
+                
+
+                <img class="logo" src="Image/LOGO.png" width="70" height="70" />
+                <div class="icon">
+                    <asp:LinkButton ID="LinkButton4" runat="server" CssClass="out" Font-Bold="True" Font-Size="X-Large" ForeColor="#EC0890" OnClick="LinkButton4_Click">Sign Out</asp:LinkButton>
+                    <asp:Label ID="Label1" runat="server" Text="Label" ForeColor="#EC0890" Font-Size="Medium"></asp:Label>
+                    <asp:TextBox ID="TextBox1" runat="server" placeholder="Search here"></asp:TextBox>
+                    <asp:Button ID="Button1" runat="server" Text="Search" OnClick="Button1_Click" />
+                   
+                </div>
+
+                
+                <div class="nav-bar">
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal">
+                        <DynamicHoverStyle ForeColor="#FF9891" />
+                        <DynamicMenuItemStyle ForeColor="#EC0890" />
+                        <DynamicMenuStyle BackColor="#FEF2F4" BorderStyle="None" HorizontalPadding="25px" />
+                        <Items>
+                            <asp:MenuItem Text="Home" NavigateUrl="~/Home.aspx" Value="Home"></asp:MenuItem>
+                            <asp:MenuItem Text="Products" Value="Products">
+                                
+                                <asp:MenuItem Text="Cake" NavigateUrl="Cakes.aspx?cake=cake" Value="Cake"></asp:MenuItem>
+                                <asp:MenuItem Text="Pastries" NavigateUrl="Pastry.aspx?pastry=pastry" Value="Pastries"></asp:MenuItem>
+                                <asp:MenuItem Text="Macrons" NavigateUrl="Macaron.aspx?mac=Macarons" Value="Macrons"></asp:MenuItem>
+                            </asp:MenuItem>
+                                     
+                            <asp:MenuItem Text="Account" Value="Account">
+                                <asp:MenuItem Text="Register" Value="Log In" NavigateUrl="~/Reg.aspx"></asp:MenuItem>
+                                <asp:MenuItem Text="Log In" Value="Log Out" NavigateUrl="~/Login_N.aspx"></asp:MenuItem>
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="About Us" Value="About Us" NavigateUrl="~/AboutUs.aspx"></asp:MenuItem>
+                        </Items>
+                        <StaticHoverStyle ForeColor="#FF9891" Font-Bold="True" />
+                        <StaticMenuItemStyle Font-Bold="True" ForeColor="#EC0890" HorizontalPadding="20px" ItemSpacing="30px" />
+                        <StaticMenuStyle VerticalPadding="20px" HorizontalPadding="50px" />
+                    </asp:Menu>
+                </div>
+                </div>
+                        
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <div>
+                        <asp:DataList ID="DataList1" runat="server" DataKeyField="C_id" DataSourceID="SqlDataSource1" RepeatDirection="Horizontal" RepeatColumns="3">
+                            <ItemTemplate>
+                                <asp:Image ID="Image1" runat="server" Height="308px" Width="280px" ImageUrl='<%# Eval("C_img") %>' />
+                                <br />
+                                <asp:Label Text='<%# Eval("C_Name") %>' runat="server" ID="C_NameLabel" /><br />
+                                <asp:Label Text='<%# Eval("C_Cat") %>' runat="server" ID="C_CatLabel" /><br />
+                                <asp:Label Text='<%# Eval("C_Desc") %>' runat="server" ID="C_DescLabel" /><br />
+                                <asp:Label Text='<%# Eval("C_Price") %>' runat="server" ID="C_PriceLabel" />&nbsp;<asp:Label Text='<%# Eval("C_Type") %>' runat="server" ID="C_TypeLabel" /><br />
+                                <asp:Label Text='<%# Eval("C_Gms") %>' runat="server" ID="C_GmsLabel" /><br />
+                                <br />
+                                <br />
+                            </ItemTemplate>
+                        </asp:DataList>
+                        <asp:SqlDataSource runat="server" ID="SqlDataSource1" ConnectionString='<%$ ConnectionStrings:studentConnectionString %>' SelectCommand="SELECT * FROM [bakes] WHERE ([Keyword] LIKE '%' + @Keyword + '%')">
+                            <SelectParameters>
+                                <asp:ControlParameter ControlID="TextBox1" PropertyName="Text" Name="Keyword" Type="String"></asp:ControlParameter>
+                            </SelectParameters>
+                        </asp:SqlDataSource>
+                            </div>
+                    </td>
+                </tr>
+                
+               
+                <tr>
+                    <td>
+                        <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                            </div>
+                    </td>
+                </tr>
+                
+                <tr style="background-color:#499fa4">
+                    <td>                 
+                    <div class="footer">
+                        <center>
+                        
+                            <%--<div><p>Quick Links</p>
+                                <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="https://www.instagram.com/">Instagram</asp:LinkButton><br />
+                                <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="https://www.facebook.com/">Facebook</asp:LinkButton>
+
+                            </div>--%>
+                            <div class="logo">
+                        <img  src="Image/LOGO.png" width="70" height="70" />
+                        <p><%:DateTime.Now.Year %> - Made by Rupali Vaje</p>
+                            </div>
+                         </center>
+                        <div class="contact">
+                            <h4>Account</h4>
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+91 9867783845</p>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="" >cakesnbakes@gmail.com</a>
+                        </div>
+                        <div class="products">
+                            <h4>Products</h4>
+                            <asp:LinkButton ID="LinkButton1" PostBackUrl="~/Cakes.aspx" runat="server">Cakes</asp:LinkButton>|
+                            <asp:LinkButton ID="LinkButton2" PostBackUrl="~/Pastry.aspx" runat="server">Pastry</asp:LinkButton>|
+                            <asp:LinkButton ID="LinkButton3" runat="server">Macarons</asp:LinkButton>
+                        </div>
+                    </div>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+    </form>
+</body>
+</html>
