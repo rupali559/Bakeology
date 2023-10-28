@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Bakeology
 {
@@ -14,7 +9,7 @@ namespace Bakeology
             if (Session["Email"] != null)
             {
                 Label1.Visible = true;
-                Label1.Text = "Hii.."+ Session["email"];
+                Label1.Text = "Hii.." + Session["email"];
             }
             else
                 Label1.Visible = false;
@@ -30,13 +25,13 @@ namespace Bakeology
                 Response.Redirect("Search.aspx");
             }
 
-            
+
 
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void LinkButton4_Click(object sender, EventArgs e)

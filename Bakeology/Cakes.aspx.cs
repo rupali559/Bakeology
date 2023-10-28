@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Bakeology
@@ -11,10 +7,10 @@ namespace Bakeology
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
-                
+
                 if (Request.QueryString["cake"] != null)
                 {
                     DataList1.DataSource = null;
@@ -27,7 +23,7 @@ namespace Bakeology
                     DataList1.DataSource = SqlDataSource3;
                     DataList1.DataBind();
                 }
-                else if(Request.QueryString["Eggless"] != null)
+                else if (Request.QueryString["Eggless"] != null)
                 {
                     DataList1.DataSource = null;
                     DataList1.DataSource = SqlDataSource4;
@@ -65,8 +61,8 @@ namespace Bakeology
                     Response.Redirect("Addtocart.aspx?id=" + e.CommandArgument.ToString());
                 }
 
-            } 
-            else 
+            }
+            else
             {
                 Response.Write("<script language = 'javascript'> window.alert('Please Login to continue'); window.location = 'Login_N.aspx';</script >");
 
@@ -78,7 +74,7 @@ namespace Bakeology
             if (CheckBox3.Checked)
             {
                 Response.Redirect("Cakes.aspx?Egg=egg");
-              
+
             }
             else if (CheckBox4.Checked)
             {

@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Bakeology
@@ -34,7 +30,7 @@ namespace Bakeology
                 if (fileUpload.HasFile)
                 {
                     string filename = Path.GetFileName(fileUpload.PostedFile.FileName);
-                    fileUpload.SaveAs(Server.MapPath("~/uploads/" + filename));+
+                    fileUpload.SaveAs(Server.MapPath("~/uploads/" + filename));
                     //Image1.ImageUrl = "~/upload/" + filename;
 
                     string imgpath = "~/uploads/" + filename;
@@ -87,11 +83,11 @@ namespace Bakeology
 
                 // Delete the temporary file
                 //File.Delete(filePath);
-            
+
             }
         }
 
-            protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {
 
         }

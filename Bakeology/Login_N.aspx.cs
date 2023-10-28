@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Bakeology
 {
@@ -22,12 +17,13 @@ namespace Bakeology
             con.Open();
 
             SqlDataReader dr = cmd.ExecuteReader();
+
             if (dr.Read())
             {
                 Session["Email"] = TextBox1.Text;
                 Response.Redirect("Home.aspx");
             }
-            else if(TextBox1.Text == "admin" && TextBox2.Text == "pass")
+            else if (TextBox1.Text == "admin" && TextBox2.Text == "pass")
             {
                 Response.Redirect("Admindesk.aspx");
             }
